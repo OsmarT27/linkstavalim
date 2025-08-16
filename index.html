@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links.Tavalim</title>
+    <!-- Adicionando Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Linha adicionada para o Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* --- Variáveis de cores para facilitar a personalização --- */
+        :root {
+            --primary: #ef3e42;
+            --secondary: #6dc05a;
+            --accent: #65cff6;
+            --dark: #000000;
+            --light: #ffffff;
+        }
+
+        /* --- Estilo do corpo da página com degradê animado --- */
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background: linear-gradient(45deg, var(--dark), #333333, var(--dark));
+            background-size: 300% 300%;
+            animation: gradientAnimation 10s ease infinite;
+            color: var(--light);
+        }
+
+        /* Animação para o degradê do fundo */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* --- Container principal com a caixa dos links (estilo vidro) --- */
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Estilo da imagem da logo --- */
+        .profile-img {
+            width: 100%; 
+            height: auto; 
+            border: none;
+            box-shadow: none;
+            margin-bottom: 15px;
+        }
+
+        /* --- Estilo dos botões de link --- */
+        .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 18px 25px;
+            margin: 15px 0;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Efeito ao passar o mouse por cima do link */
+        .link:hover {
+            background-color: var(--primary);
+            color: var(--light);
+            transform: translateY(-2px);
+        }
+        
+        /* --- Estilo do Modal (a 'bandeja') --- */
+        .modal {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+            backdrop-filter: blur(5px);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            color: var(--light);
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+        }
+        
+        /* Título do modal */
+        .modal-title {
+            font-size: 1.5em;
+            color: var(--light);
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        /* Estilo dos e-mails no modal */
+        .email-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 18px 25px;
+            margin: 15px 0;
+            border-radius: 30px;
+            background-color: var(--light); /* Cor de fundo inicial */
+            color: var(--accent); /* Cor do texto inicial */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .email-item:hover {
+            background-color: var(--accent); /* Inverte a cor de fundo no hover */
+            color: var(--light); /* Inverte a cor do texto no hover */
+            transform: translateY(-2px);
+        }
+
+        .email-item .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .email-item .text {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .email-address {
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Estilo para o link de e-mail clicável */
+        .email-link-clicavel {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Estilos específicos para os botões do link tree */
+        .link.whatsapp {
+            color: #25D366;
+        }
+        .link.whatsapp:hover {
+            background-color: #25D366;
+            color: var(--light);
+        }
+
+        .link.email {
+            color: var(--accent);
+        }
+        .link.email:hover {
+            background-color: var(--accent);
+            color: var(--light);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Substitua 'assets/tavalim-2.png' pelo caminho da sua imagem -->
+        <img class="profile-img" src="assets/tavalim-2.png" alt="Sua Foto de Perfil">
+        
+        <!-- Links com ícones e classes de cor -->
+        <a class="link whatsapp" href="https://wa.me/5587991424859?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20meu%20evento." target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a class="link" href="https://www.instagram.com/tavalimiluminacaopro/" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a class="link" href="https://www.tavalim.com.br" target="_blank">
+            <i class="fas fa-globe"></i> Site Principal
+        </a>
+        <a class="link" href="https://www.youtube.com/@TavalimIluminacaoPRO" target="_blank">
+            <i class="fab fa-youtube"></i> YouTube
+        </a>
+        
+        <!-- Botão para Arquivos com o link atualizado -->
+        <a class="link" href="https://drive.google.com/drive/folders/1CpP34qBDea-gYTVnF0h61x3PM97Y6AXt?usp=sharing" target="_blank">
+            <i class="fas fa-file-alt"></i> Arquivos
+        </a>
+
+        <!-- Botão para E-mail, que agora abrirá a bandeja -->
+        <a class="link email" href="javascript:void(0)" onclick="openEmailModal()">
+            <i class="fas fa-envelope"></i> E-mail
+        </a>
+
+    </div>
+
+    <!-- Modal (a bandeja de e-mails) -->
+    <div id="emailModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeEmailModal()">&times;</span>
+        <h1 class="modal-title">Nossos E-mails</h1>
+        
+        <!-- Contato Geral (Com ícone clicável) -->
+        <div class="email-item">
+            <a href="mailto:contato@tavalim.com.br" class="email-link-clicavel">
+                <i class="fas fa-envelope icon"></i>
+            </a>
+            <span class="text">Contato Geral</span>
+            <span class="email-address">contato@tavalim.com.br</span>
+        </div>
+        
+        <!-- Envio de Arquivos (Não-clicável) -->
+        <div class="email-item">
+            <i class="fas fa-file-alt icon"></i>
+            <span class="text">Envio de Arquivos</span>
+            <span class="email-address">arquivos@tavalim.com.br</span>
+        </div>
+
+        <!-- Pagamentos (Não-clicável) -->
+        <div class="email-item">
+            <i class="fas fa-coins icon"></i>
+            <span class="text">Pagamentos</span>
+            <span class="email-address">pix@tavalim.com.br</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        function openEmailModal() {
+            document.getElementById("emailModal").style.display = "block";
+        }
+
+        function closeEmailModal() {
+            document.getElementById("emailModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
