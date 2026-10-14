@@ -1,202 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Links.Tavalim</title>
-    <link rel="icon" type="image/png" href="assets/favicon.ico">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000;
-        }
-
-        .animated-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .ball {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(50px);
-            opacity: 0.6;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            25% { transform: translate(20vw, 15vh); }
-            50% { transform: translate(-10vw, 30vh); }
-            75% { transform: translate(-20vw, -10vh); }
-            100% { transform: translate(0, 0); }
-        }
-
-        .ball-1 { background-color: #ef3e42; width: 150px; height: 150px; top: 10%; left: 10%; animation-duration: 25s; }
-        .ball-2 { background-color: #6dc05a; width: 200px; height: 200px; bottom: 20%; right: 15%; animation-duration: 22s; }
-        .ball-3 { background-color: #65cff6; width: 180px; height: 180px; top: 50%; left: 40%; animation-duration: 28s; }
-        .ball-4 { background-color: #ef3e42; width: 120px; height: 120px; bottom: 5%; left: 30%; animation-duration: 20s; }
-        .ball-5 { background-color: #6dc05a; width: 220px; height: 220px; top: 25%; right: 5%; animation-duration: 30s; }
-        .ball-6 { background-color: #65cff6; width: 160px; height: 160px; bottom: 10%; left: 50%; animation-duration: 24s; }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 400px;
-            border-radius: 1rem;
-            text-align: center;
-        }
-
-        .close-button {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close-button:hover,
-        .close-button:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TAVALIM | Links</title>
+  <meta name="description" content="Fale com a TAVALIM: WhatsApp, Instagram, YouTube, e-mail e site. Luz, LED e palco para eventos que ninguém esquece.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://links.tavalim.com.br/">
+  <link rel="icon" href="assets/favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="TAVALIM Iluminação Profissional">
+  <meta property="og:title" content="TAVALIM | Links">
+  <meta property="og:description" content="Fale com a TAVALIM: WhatsApp, Instagram, YouTube, e-mail e site. Luz, LED e palco para eventos que ninguém esquece.">
+  <meta property="og:url" content="https://links.tavalim.com.br/">
+  <meta property="og:image" content="https://tavalim.com.br/assets/1.JPEG">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-black min-h-screen flex flex-col justify-between p-4">
+<body>
+  <div class="stage" aria-hidden="true">
+    <div class="mh" style="--x:16%; --d:7.5s; --dl:-1s;   --a:24deg; --h:0s"><div class="mh__body"><i class="mh__beam"></i></div></div>
+    <div class="mh" style="--x:50%; --d:6.5s; --dl:-3.5s; --a:28deg; --h:-5s"><div class="mh__body"><i class="mh__beam"></i></div></div>
+    <div class="mh" style="--x:84%; --d:8s;   --dl:-5s;   --a:24deg; --h:-10s"><div class="mh__body"><i class="mh__beam"></i></div></div>
+  </div>
+  <div class="page">
+    <header class="top">
+      <button class="share" id="share" type="button" aria-label="Compartilhar esta página"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M176,160a39.89,39.89,0,0,0-28.62,12.09l-46.1-29.63a39.8,39.8,0,0,0,0-28.92l46.1-29.63a40,40,0,1,0-8.66-13.45l-46.1,29.63a40,40,0,1,0,0,55.82l46.1,29.63A40,40,0,1,0,176,160Zm0-128a24,24,0,1,1-24,24A24,24,0,0,1,176,32ZM64,152a24,24,0,1,1,24-24A24,24,0,0,1,64,152Zm112,72a24,24,0,1,1,24-24A24,24,0,0,1,176,224Z"/></svg></button>
+      <img class="logo" src="assets/Tavalim-2.png" alt="TAVALIM Iluminação Profissional" width="500" height="167">
+      <p class="tag">Luz, LED e palco para eventos que ninguém esquece.</p>
+    </header>
+    <main>
+      <ul class="links">
+        <li style="--i:1"><a class="link link--wa" href="https://wa.me/5587991424859?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20meu%20evento." target="_blank" rel="noopener"><span class="link__ico"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg></span><b>Pedir orçamento</b><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false" class="link__go"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a></li>
+        <li style="--i:2"><a class="link link--site" href="https://www.tavalim.com.br/" target="_blank" rel="noopener"><span class="link__ico"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm87.62,96H175.79C174,83.49,159.94,57.67,148.41,42.4A88.19,88.19,0,0,1,215.63,120ZM96.23,136h63.54c-2.31,41.61-22.23,67.11-31.77,77C118.45,203.1,98.54,177.6,96.23,136Zm0-16C98.54,78.39,118.46,52.89,128,43c9.55,9.93,29.46,35.43,31.77,77Zm11.36-77.6C96.06,57.67,82,83.49,80.21,120H40.37A88.19,88.19,0,0,1,107.59,42.4ZM40.37,136H80.21c1.82,36.51,15.85,62.33,27.38,77.6A88.19,88.19,0,0,1,40.37,136Zm108,77.6c11.53-15.27,25.56-41.09,27.38-77.6h39.84A88.19,88.19,0,0,1,148.41,213.6Z"/></svg></span><b>Nosso site</b><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false" class="link__go"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a></li>
+        <li style="--i:3"><a class="link link--ig" href="https://www.instagram.com/tavalimiluminacaopro/" target="_blank" rel="noopener"><span class="link__ico"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg></span><b>Instagram</b><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false" class="link__go"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a></li>
+        <li style="--i:4"><a class="link link--yt" href="https://www.youtube.com/@TavalimIluminacaoPRO" target="_blank" rel="noopener"><span class="link__ico"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M164.44,121.34l-48-32A8,8,0,0,0,104,96v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,145.05V111l25.58,17ZM234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,39.88,131,40,128,40s-57.56-.12-91.84,13.12a24,24,0,0,0-14.49,16.4C19.08,79.5,16,97.74,16,128s3.08,48.5,5.67,58.48a24,24,0,0,0,14.49,16.41C69,215.56,120.4,216,127.34,216h1.32c6.94,0,58.37-.44,91.18-13.11a24,24,0,0,0,14.49-16.41c2.59-10,5.67-28.22,5.67-58.48S236.92,79.5,234.33,69.52Zm-15.49,113a8,8,0,0,1-4.77,5.49c-31.65,12.22-85.48,12-86,12H128c-.54,0-54.33.2-86-12a8,8,0,0,1-4.77-5.49C34.8,173.39,32,156.57,32,128s2.8-45.39,5.16-54.47A8,8,0,0,1,41.93,68c30.52-11.79,81.66-12,85.85-12h.27c.54,0,54.38-.18,86,12a8,8,0,0,1,4.77,5.49C221.2,82.61,224,99.43,224,128S221.2,173.39,218.84,182.47Z"/></svg></span><b>YouTube</b><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false" class="link__go"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a></li>
+        <li style="--i:5"><button class="link link--mail" type="button" id="open-mail" aria-haspopup="dialog"><span class="link__ico"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"/></svg></span><b>E-mail</b><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false" class="link__go"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></button></li>
+      </ul>
 
-    <div class="animated-background">
-        <div class="ball ball-1"></div>
-        <div class="ball ball-2"></div>
-        <div class="ball ball-3"></div>
-        <div class="ball ball-4"></div>
-        <div class="ball ball-5"></div>
-        <div class="ball ball-6"></div>
-    </div>
-
-    <div class="w-full max-w-sm mx-auto z-10 flex-grow flex flex-col justify-center">
-        
-        <div class="relative bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white rounded-3xl p-6 shadow-xl mb-4 border border-white border-opacity-30">
-            
-            <button class="absolute top-4 left-4 text-gray-400 hover:text-white transition-colors duration-200" onclick="navigator.share({ title: document.title, url: window.location.href })">
-                <i class="fas fa-share-alt text-lg"></i>
-            </button>
-            
-            <div class="mt-2 text-center">
-                <img src="assets/Tavalim-2.png" alt="Logotipo" class="mx-auto h-30 w-auto">
-            </div>
+      <section class="artists" id="artistas" aria-labelledby="art-t">
+        <h2 id="art-t">Já passaram pelos nossos palcos</h2>
+        <div class="deck" data-deck tabindex="0" role="group" aria-roledescription="baralho" aria-label="Artistas atendidos. Arraste a carta para o lado ou use as setas do teclado.">
+          <ul class="deck__cards" data-cards></ul>
         </div>
+        <p class="deck__hint" aria-hidden="true">Arraste ou toque na carta</p>
+        <p class="sr-only" aria-live="polite" data-live></p>
+      </section>
+    </main>
 
-        <a href="https://wa.me/5587991424859?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20meu%20evento." target="_blank" class="block bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white rounded-3xl p-4 shadow-lg mb-4 text-center font-medium transition-transform transform hover:scale-105 duration-200 border border-white border-opacity-30">
-            <div class="flex items-center justify-center">
-                <i class="fab fa-whatsapp text-lg mr-2"></i>
-                Whatsapp
-            </div>
-        </a>
-        <a href="https://www.instagram.com/tavalimiluminacaopro/" target="_blank" class="block bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white rounded-3xl p-4 shadow-lg mb-4 text-center font-medium transition-transform transform hover:scale-105 duration-200 border border-white border-opacity-30">
-            <div class="flex items-center justify-center">
-                <i class="fab fa-instagram text-lg mr-2"></i>
-                Instagram
-            </div>
-        </a>
-        <a href="https://www.tavalim.com.br/" target="_blank" class="block bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white rounded-3xl p-4 shadow-lg mb-4 text-center font-medium transition-transform transform hover:scale-105 duration-200 border border-white border-opacity-30">
-            <div class="flex items-center justify-center">
-                <i class="fas fa-globe text-lg mr-2"></i>
-                Site
-            </div>
-        </a>
-        <a href="https://www.youtube.com/@TavalimIluminacaoPRO" target="_blank" class="block bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white rounded-3xl p-4 shadow-lg mb-4 text-center font-medium transition-transform transform hover:scale-105 duration-200 border border-white border-opacity-30">
-            <div class="flex items-center justify-center">
-                <i class="fab fa-youtube text-lg mr-2"></i>
-                Youtube
-            </div>
-        </a>
-        <a href="https://links.tavalim.com.br/login" target="_blank" class="block bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white rounded-3xl p-4 shadow-lg mb-4 text-center font-medium transition-transform transform hover:scale-105 duration-200 border border-white border-opacity-30">
-            <div class="flex items-center justify-center">
-                <i class="fas fa-folder text-lg mr-2"></i>
-                Arquivos
-            </div>
-        </a>
-        <a href="#" class="block bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white rounded-3xl p-4 shadow-lg mb-4 text-center font-medium transition-transform transform hover:scale-105 duration-200 border border-white border-opacity-30" onclick="document.getElementById('emailModal').style.display='block'">
-            <div class="flex items-center justify-center">
-                <i class="fas fa-envelope text-lg mr-2"></i>
-                E-Mail
-            </div>
-        </a>
-    </div>
+    <footer class="ftr">
+      <p>© 2026 TAVALIM · Site por <a href="https://www.instagram.com/osmar.t.neto/" target="_blank" rel="noopener">Osmar Tavares</a></p>
+      <div class="tri" aria-hidden="true"></div>
+    </footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-    <div id="emailModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="document.getElementById('emailModal').style.display='none'">&times;</span>
-            <h2 class="text-xl font-bold mb-4">Emails de Contato</h2>
-            <ul class="text-middle">
-                <li class="mb-2 flex items-center">
-                    <i class="fas fa-envelope text-lg mr-2"></i>
-                    <strong>Contato:</strong> contato@tavalim.com.br
-                </li>
-                <li class="mb-2 flex items-center">
-                    <i class="fas fa-file text-lg mr-2"></i>
-                    <strong>Arquivos:</strong> arquivos@tavalim.com.br
-                </li>
-                <li class="mb-2 flex items-center">
-                    <i class="fas fa-money-bill-wave text-lg mr-2"></i>
-                    <strong>Pix:</strong> pix@tavalim.com.br
-                </li>
-            </ul>
-        </div>
-    </div>
+  <dialog id="mail-dialog" aria-labelledby="mail-t">
+    <h2 id="mail-t">E-mails</h2>
+    <ul>
+      <li><a class="mail" href="mailto:contato@tavalim.com.br?subject=Or%C3%A7amento%20para%20evento"><b>Contato</b><span>contato@tavalim.com.br</span></a></li>
+      <li><a class="mail" href="mailto:arquivos@tavalim.com.br"><b>Arquivos</b><span>arquivos@tavalim.com.br</span></a></li>
+      <li><a class="mail" href="mailto:pix@tavalim.com.br"><b>Pix</b><span>pix@tavalim.com.br</span></a></li>
+    </ul>
+    <button class="close" type="button" id="close-mail">Fechar</button>
+  </dialog>
 
-    <p class="mt-8 text-center text-xs text-gray-500">
-        © 2025 TAVALIM ILUMINAÇÃO PROFISSIONAL. Site desenvolvido por <a class="text-gray-500 underline hover:no-underline" href="https://www.instagram.com/osmar.t.neto/" target="_blank">Osmar Tavares</a>. Todos os direitos reservados.
-    </p>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById('emailModal');
-            const closeBtn = document.querySelector('.close-button');
-            const openBtn = document.querySelector('a[onclick*="emailModal"]');
-
-            openBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                modal.style.display = 'block';
-            });
-
-            closeBtn.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-
-            window.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-        });
-    </script>
-    
+  <script src="js/artists.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
